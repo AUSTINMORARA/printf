@@ -14,15 +14,14 @@ int _printf(const char *format, ...)
 	int i, j, count;
 	spec s[] = {
 		{'c', print_char},
-		{'s', print_str},
-		{'\0', NULL}
+		{'s', print_str}
 		};
 
 	va_start(ap, format);
 	i = 0;
 	j = 0;
 	count = 0;
-	if (!format)
+	if (format == NULL)
 	{
 		return (-1);
 	}
