@@ -12,8 +12,6 @@ int _printf(const char *format, ...)
 	va_list ap;
 
 	int i, j, count;
-	/*spec *s = malloc(sizeof(spec) + 2 *  sizeof(int));*/
-
 	spec s[] = {
 		{'c', print_char},
 		{'s', print_str},
@@ -21,7 +19,6 @@ int _printf(const char *format, ...)
 		};
 
 	va_start(ap, format);
-
 	i = 0;
 	j = 0;
 	count = 0;
@@ -37,16 +34,20 @@ int _printf(const char *format, ...)
 			{
 				if (format[i + 1] == s[j].c)
 				{
-					count = s[j].specfunc(ap, count);
+					s[j].specfunc(ap, count);
+					break;
 				}
 				j++;
 			}
 		}
-	_putchar(format[i]);
+		else
+		{
+		_putchar(format[i]);
+		count++;
+		}
 	i++;
-	count++;
 	}
 	va_end(ap);
 	_putchar('\n');
-	return (count);
+	return(count);
 }
