@@ -22,6 +22,8 @@ typedef struct specifier
 int _putchar(char c);
 int print_char(va_list ap, int count);
 int print_str(va_list ap, int count);
+int print_per(va_list ap, int count);
+int print_int(va_list ap, int count);
+int print_binary(va_list ap, int count);
 int _printf(const char *format, ...);
-
 #endif

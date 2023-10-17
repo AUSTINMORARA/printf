@@ -12,10 +12,10 @@ int _printf(const char *format, ...)
 	va_list ap;
 
 	int i, j, count;
-	spec s[] = {
-		{'c', print_char},
-		{'s', print_str}
-		};
+	spec s[] = {{'c', print_char},{'s', print_str},
+		{'%', print_per},{'b', print_binary},
+		{'d', print_int},{'i', print_int}, {'\0', NULL}
+	};
 
 	va_start(ap, format);
 	i = 0;

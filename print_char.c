@@ -45,3 +45,17 @@ int print_str(va_list ap, int count)
 	_putchar('\n');
 	return (count);
 }
+
+/**
+ * print_per - prints the percentage sign
+ * @count: number printed.
+ * Return: count.
+ */
+
+int print_per(va_list ap, int count)
+{
+	(void)ap;
+	_putchar('%');
+	count++;
+	return (count);
+}
