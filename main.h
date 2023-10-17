@@ -8,8 +8,6 @@
  * struct specifier - hold specifier and its function.
  * @c: character specifier
  * @specfunc: specifier function pointer.
- * @va_list: list of arguments.
- * @count: characters count.
  *
  * Description: Holds the format specifier.
  */
