@@ -7,9 +7,9 @@
 /**
  * struct specifier - hold specifier and its function.
  * @c: character specifier
- * @spec: specifier function pointer.
- * @va_list: variable list containing arguments.
- * @count: returns number of characters printed.
+ * @specfunc: specifier function pointer.
+ * @va_list: list of arguments.
+ * @count: characters count.
  *
  * Description: Holds the format specifier.
  */
