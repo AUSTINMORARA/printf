@@ -14,16 +14,19 @@
 
 typedef struct specifier
 {
-	char c;
-	int (*specfunc)(va_list, int count);
+	char *c;
+	int (*specfunc)(va_list ap);
 } spec;
 
 
 int _putchar(char c);
-int print_char(va_list ap, int count);
-int print_str(va_list ap, int count);
-int print_per(va_list ap, int count);
-int print_int(va_list ap, int count);
-int print_binary(va_list ap, int count);
+int print_char(va_list ap);
+int print_str(va_list ap);
+int print_per(va_list ap);
+int print_int(va_list ap);
+int print_binary(va_list ap);
+int print_unint(va_list ap);
+int print_rev_str(va_list ap);
 int _printf(const char *format, ...);
+
 #endif

@@ -8,15 +8,14 @@
  * Return: character.
  */
 
-int print_char(va_list ap, int count)
+int print_char(va_list ap)
 {
 	char c = va_arg(ap, int);
 
-	count = 0;
+	int count = 0;
 
 	_putchar(c);
-	count++;
-	_putchar('\n');
+	count += 1;
 	return (count);
 }
 
@@ -27,9 +26,9 @@ int print_char(va_list ap, int count)
  * Return: string.
  */
 
-int print_str(va_list ap, int count)
+int print_str(va_list ap)
 {
-	int i = 0;
+	int count, i = 0;
 
 	char *c = va_arg(ap, char*);
 
@@ -39,23 +38,8 @@ int print_str(va_list ap, int count)
 	while (c[i] != '\0')
 	{
 		_putchar(c[i]);
-		count++;
+		count += 1;
 		i++;
 	}
-	_putchar('\n');
-	return (count);
-}
-
-/**
- * print_per - prints the percentage sign
- * @count: number printed.
- * Return: count.
- */
-
-int print_per(va_list ap, int count)
-{
-	(void)ap;
-	_putchar('%');
-	count++;
 	return (count);
 }

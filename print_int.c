@@ -1,16 +1,16 @@
 #include "main.h"
 
 /**
- * print_integer - prints an integer
+ * print_int - prints an integer
  * @count: counts arguments printed
  * @ap: argument list.
  * Return: count.
  */
 
-int print_int(va_list ap, int count)
+int print_int(va_list ap)
 {
 	int number = va_arg(ap, int);
-	int div;
+	int div, count = 0;
 
 	if (number < 0)
 	{
@@ -18,7 +18,7 @@ int print_int(va_list ap, int count)
 	}
 
 	div = 1;
-	while (number/div > 9)
+	while (number / div > 9)
 	{
 		div *= 10;
 	}
@@ -28,7 +28,7 @@ int print_int(va_list ap, int count)
 		_putchar(number / div + '0');
 		number %= div;
 		div /= 10;
-		count++;
+		count += 1;
 	}
 	return (count);
 }
@@ -36,13 +36,13 @@ int print_int(va_list ap, int count)
 /**
  * print_binary - convert number to binary.
  * @count: count arguments.
- * @args: number of argumants.
+ * @ap: number of argumants.
  * Return: count;
  */
 
-int print_binary(va_list ap, int count)
+int print_binary(va_list ap)
 {
-	int n, i;
+	int n, i, count;
 	char bin[65];
 	int index = 0;
 
@@ -62,6 +62,6 @@ int print_binary(va_list ap, int count)
 	{
 		_putchar(bin[i]);
 	}
-	count++;
+	count += 1;
 	return (count);
 }
