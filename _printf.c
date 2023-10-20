@@ -59,6 +59,7 @@ int _printf(const char *format, ...)
 			else
 			{
 				_putchar('%');
+				_putchar(*(format + i));
 				count += 1;
 				i += 1;
 			}
@@ -66,9 +67,9 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-		_putchar(format[i]);
-		count += 1;
-		i += 1;
+			_putchar(*(format + i));
+			count += 1;
+			i += 1;
 		}
 	}
 	va_end(ap);

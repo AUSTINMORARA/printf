@@ -2,7 +2,6 @@
 
 /**
  * print_int - prints an integer
- * @count: counts arguments printed
  * @ap: argument list.
  * Return: count.
  */
@@ -35,7 +34,6 @@ int print_int(va_list ap)
 
 /**
  * print_binary - convert number to binary.
- * @count: count arguments.
  * @ap: number of argumants.
  * Return: count;
  */

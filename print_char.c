@@ -4,7 +4,6 @@
 /**
  * print_char - prints characters.
  * @ap: list of character(s) to be printed.
- * @count: counts the characters printed.
  * Return: character.
  */
 
@@ -19,24 +18,24 @@ int print_char(va_list ap)
 /**
  * print_str - print strings
  * @ap: list with string to be printed.
- * @count: counts the characters printed.
  * Return: string.
  */
 
 int print_str(va_list ap)
 {
-	int count, i = 0;
+	int i, count = 0;
 
 	char *c = va_arg(ap, char*);
 
 	count = 0;
 	if (c == NULL)
 		return (-1);
-	while (c[i] != '\0')
+	for (count = 0; *(c + count) != '\0'; count++)
+		;
+
+	for(i = 0; i < count; i++)
 	{
 		_putchar(c[i]);
-		count += 1;
-		i++;
 	}
 	return (count);
 }
