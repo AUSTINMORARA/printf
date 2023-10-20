@@ -12,11 +12,8 @@ int print_char(va_list ap)
 {
 	char c = va_arg(ap, int);
 
-	int count = 0;
-
 	_putchar(c);
-	count += 1;
-	return (count);
+	return (1);
 }
 
 /**

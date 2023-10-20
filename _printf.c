@@ -31,22 +31,22 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 
-	while (format[i] != '\0')
+	while (*(format + i) != '\0')
 	{
-		if (format[i] == '%')
+		if (*(format + i) == '%')
 		{
 			i += 1;
 
 			while (j < sp_len && format[i] != s[j].c[0])
 				j++;
 
-			if (format[i] == '\0')
+			if (*(format + i) == '\0')
 				return (-1);
 			else if (format[i] == '%')
 			{
 				_putchar('%');
-				count++;
-				i++;
+				count += 1;
+				i += 1;
 			}
 			else if (j < sp_len)
 			{
@@ -54,25 +54,23 @@ int _printf(const char *format, ...)
 
 				if (count == -1)
 					return (-1);
-				i++;
+				i += 1;
 			}
 			else
 			{
 				_putchar('%');
-				count++;
-				i++;
+				count += 1;
+				i += 1;
 			}
 			_putchar('\n');
 		}
 		else
 		{
 		_putchar(format[i]);
-		count++;
-		i++;
+		count += 1;
+		i += 1;
 		}
 	}
-	_putchar('\n');
-
 	va_end(ap);
 
 	return (count);
