@@ -23,19 +23,21 @@ int print_char(va_list ap)
 
 int print_str(va_list ap)
 {
-	int i, count = 0;
+	char *s;
+	int count, i;
 
-	char *c = va_arg(ap, char*);
+	s = va_arg(ap, char *);
 
-	count = 0;
-	if (c == NULL)
+	if (s == NULL)
 		return (-1);
-	for (count = 0; *(c + count) != '\0'; count++)
+
+	for (count = 0; *(s + count) != '\0'; count++)
 		;
 
 	for (i = 0; i < count; i++)
 	{
-		_putchar(c[i]);
+		_putchar(*(s + i));
 	}
+
 	return (count);
 }

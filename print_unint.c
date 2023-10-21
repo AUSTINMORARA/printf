@@ -22,7 +22,7 @@ int print_unint(va_list ap)
 	while (count >= 1)
 	{
 		_putchar(((i / count) % 10) + '0');
-		count / 10;
+		count = count / 10;
 		i++;
 	}
 	return (i);

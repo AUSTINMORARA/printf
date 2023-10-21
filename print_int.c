@@ -40,7 +40,7 @@ int print_int(va_list ap)
 
 int print_binary(va_list ap)
 {
-	int n, i, count;
+	int n, i, count = 0;
 	char bin[65];
 	int index = 0;
 
@@ -59,7 +59,7 @@ int print_binary(va_list ap)
 	for (i = index - 1; i >= 0; i--)
 	{
 		_putchar(bin[i]);
+		count += 1;
 	}
-	count += 1;
 	return (count);
 }
