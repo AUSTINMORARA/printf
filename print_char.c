@@ -33,7 +33,7 @@ int print_str(va_list ap)
 	for (count = 0; *(c + count) != '\0'; count++)
 		;
 
-	for(i = 0; i < count; i++)
+	for (i = 0; i < count; i++)
 	{
 		_putchar(c[i]);
 	}
