@@ -18,5 +18,6 @@ int main(void)
 	_printf("A char inside a sentence: %c. Did it work?\n", 'F');
 	_printf("Let'see if the cast is correctly done: %c. Did it work?\n", 48);
 	_printf("Complete the sentence: You %s nothing, Jon Snow.\n", "know");
+	_printf("%d", 1024);
 	return (0);
 }
